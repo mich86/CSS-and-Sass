@@ -117,6 +117,17 @@ body {
   }
 }
 
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -124,8 +135,10 @@ body {
   padding: 15px 40px;
   display: inline-block;
   border-radius: 100px;
-  /* has to be on inttial state */
+  /* has to be on initial state */
   transition: all 0.2s;
+  /* for creating the .btn::after */
+  position: relative;
 }
 
 .btn:hover {
@@ -142,4 +155,34 @@ body {
 .btn-white {
   background-color: #fff;
   color: #777777;
+}
+
+/* creating the same element behind itself */
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* animation on initial state */
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInUp 0.5s ease-out 0.75s;
+  /* styles applied before animation starts */
+  animation-fill-mode: backwards;
 }
