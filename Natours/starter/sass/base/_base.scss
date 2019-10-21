@@ -1,0 +1,13 @@
+//basic definations of the project
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* 1rem now = 10px => 16px is default so = 16.25% (for accessibility easier for responsive small/big */
+  font-size: 62.5%;
+}
