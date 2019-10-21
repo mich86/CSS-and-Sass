@@ -161,9 +161,7 @@ body {
     padding: 1.5rem 4rem;
     display: inline-block;
     border-radius: 10rem;
-    /* has to be on initial state */
     transition: all 0.2s;
-    /* for creating the btn::after */
     position: relative;
     font-size: 1.6rem;
   }
@@ -178,7 +176,6 @@ body {
     }
   }
 
-  /* when clicked */
   &:active {
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
@@ -193,7 +190,6 @@ body {
     }
   }
 
-  /* creating the same element behind itself */
   &::after {
     content: '';
     display: inline-block;
@@ -204,13 +200,11 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    /* animation on initial state */
     transition: all 0.4s;
   }
 
   &--animated {
     animation: moveInUp 0.5s ease-out 0.75s;
-    /* styles applied before animation starts */
     animation-fill-mode: backwards;
   }
 }
