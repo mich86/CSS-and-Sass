@@ -2,6 +2,26 @@
 cmd + D to select and change same item
 */
 
+/* BUILD
+BEM - Block Element Modifier
+.block {}
+.block__element {}
+.block__element--modifier {}
+*/
+
+/* ARCHITECT
+The 7-1 Pattern
+7 diff folders for partial sass files:
+- base/
+- components/
+- layout/ 
+- pages/ 
+- themes/
+- abstracts/
+- vendors/
+1 main sass file to import all other files into a compiled css stylesheet
+*/
+
 /*
 COLORS:
 
@@ -50,17 +70,17 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   /* these are part of the parent */
   top: 40%;
@@ -79,7 +99,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -89,7 +109,7 @@ body {
      animation-iteration-count */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -161,7 +181,7 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777777;
 }
@@ -181,7 +201,7 @@ body {
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -190,7 +210,7 @@ body {
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInUp 0.5s ease-out 0.75s;
   /* styles applied before animation starts */
   animation-fill-mode: backwards;
