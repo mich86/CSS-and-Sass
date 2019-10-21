@@ -22,6 +22,8 @@ The 7-1 Pattern
 1 main sass file to import all other files into a compiled css stylesheet
 */
 
+@import 'base/base';
+
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
