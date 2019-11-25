@@ -5,16 +5,58 @@
   background-color: $color-white;
   border-radius: 3px;
   padding: 6rem;
+  padding-left: 9rem;
   font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  & > * {
+    transform: skewX(12deg);
+  }
 
   &__shape {
     width: 15rem;
     height: 15rem;
-    background-color: orangered;
     float: left;
     -webkit-shape-outside: circle (50% at 50% 50%); //support for safari
     shape-outside: circle(50% at 50% 50%); //must be floated + height + width
     -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%); //size of the circle
+    transform: translateX(-3rem) skewX(12deg); //adding space btn circle & text NOT padding!!
+    position: relative;
+  }
+
+  &__img {
+    height: 100%; //it is inside of the shape
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden; //to correct the hover glitch
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
   }
 }
