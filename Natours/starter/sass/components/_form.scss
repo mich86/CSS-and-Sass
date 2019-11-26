@@ -13,6 +13,7 @@
     border-bottom: 3px solid transparent; //stops the input:focus moving down
     width: 90%;
     display: block;
+    transition: all 0.3s; //for smoother label animation
 
     &:focus {
       outline: none; //this is bad for accessibilty BUT...
@@ -42,5 +43,25 @@
     opacity: 0; //for animation
     visibility: hidden;
     transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+
+    &::after {
+    }
   }
 }
