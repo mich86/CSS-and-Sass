@@ -19,6 +19,25 @@ The 7-1 Pattern
 - vendors/
 1 main sass file to import all other files into a compiled css stylesheet
 */
+/*
+0 - 600px:        Phone
+600 - 900px:      Tablet portrait
+900 - 1200px:     Tablet landscape 
+[1200 - 1800] is the normal styles
+1800px + :        Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px => 
+  600/16 = 37.5em
+  900/16 = 56.25em
+  1200/16 = 75em
+  1800/16 = 112.5em
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -55,8 +74,20 @@ The 7-1 Pattern
   box-sizing: inherit; }
 
 html {
-  /* 1rem now = 10px => 16px is default so = 16.25% (for accessibility easier for responsive small/big */
+  /* 1rem = 10px => 10px/16px = 62.5% (for accessibility easier for responsive small/big */
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 70%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box; }
 
 body {
   font-family: 'Lato', sans-serif;
