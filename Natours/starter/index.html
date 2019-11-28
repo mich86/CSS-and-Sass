@@ -98,7 +98,36 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
+              <!-- 
+                density and resolution switching
+                inspect image on breakpoints then divide by the BP
+                171/900 = 0.19 => 20vw
+              -->
               <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw, 300px"
+                alt="photo-1"
+                class="composition__photo composition__photo--p1"
+                src="src=img/nat-1-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw, 300px"
+                alt="photo-2"
+                class="composition__photo composition__photo--p2"
+                src="src=img/nat-2-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw, 300px"
+                alt="photo-3"
+                class="composition__photo composition__photo--p3"
+                src="src=img/nat-1-large.jpg"
+              />
+
+              <!-- <img
                 src="img/nat-1-large.jpg"
                 alt="photo 1"
                 class="composition__photo composition__photo--p1"
@@ -112,7 +141,7 @@
                 src="img/nat-3-large.jpg"
                 alt="photo 3"
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
@@ -434,6 +463,7 @@
           <img
             srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
             alt="full logo"
+            src="img/logo-green-2x.png"
           />
         </picture>
         <!-- 
