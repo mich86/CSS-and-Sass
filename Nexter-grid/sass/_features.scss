@@ -1,0 +1,33 @@
+.features {
+  //background-color: $color-grey-light-2;
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr); not responsive
+  // responsive without media queries
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 6rem;
+  // by default align-items = stretch so any children (.feature) will try to fill the space. It'll be all up'n'doon
+  align-items: start;
+}
+
+// closely related but can be used across the site keep within this file- easier
+.feature {
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+    transform: translateY(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
+}
